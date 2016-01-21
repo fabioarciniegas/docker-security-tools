@@ -12,4 +12,3 @@ then start this image with the following command:
 
 docker run -d -p 8834:8834 -v /tmp/installer:/nessus-installer 
 
-v
