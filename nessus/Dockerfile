@@ -8,5 +8,7 @@ RUN git clone https://github.com/fabioarciniegas/docker-security-tools
 RUN docker-security-tools/nessus/test_environment.sh
 RUN dpkg -i $(find /nessus-installer/ -maxdepth 1 -name "*.deb" -print -quit)
 
+EXPOSE 8834
+
 
 
