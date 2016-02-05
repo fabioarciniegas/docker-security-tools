@@ -7,7 +7,7 @@ This container installs the best free static analysis tools for php we are aware
 # Tools included
 
 | tool      | how to run              | notes |
-|-----------+-------------------------+-------|
+|-----------|-------------------------|-------  |
 | RIPS 0.55 | [http://localhost:3001] |       |
 |           |                         |       |
 
