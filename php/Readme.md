@@ -7,7 +7,6 @@ This container installs the best free static analysis tools for php we are aware
 # Tools included
 
 | tool      | how to run                | sample |
-|-----------+---------------------------+-------|
 | RIPS 0.55 | [[http://localhost:3001]] |       |
 |           |                           |       |
 |           |                           |       |
@@ -19,13 +18,13 @@ Missing something? would like to recommend a tool? contact us.
 
 To build this container run:
 
-```
+```bash
 docker build -t php_analysis docker-security-tools/php
 ```
 
 ## Run the container
 
-```
+```bash
 docker run -it -p 3002:80 php_analysis --name local_php_analysis
 ```
 
