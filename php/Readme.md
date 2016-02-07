@@ -6,34 +6,34 @@ PHP tools, particularly those claiming security benefits are constantly changing
 
 | tool      | quick run                     | notes/more information                                                                          |
 |-----------|--------------------------------|--------------------------------------------------------------------------------|
-| RIPS 0.55 | [http://localhost:3002/rips] |                                                                                |
-| Phan      | phan_wrapper.sh /codebase      | generates a file list and passes it to phan [http://bit.ly/1NYJJR2]  |
+| RIPS 0.55 | [localhost:3002/rips][http://localhost:3002/rips] |                                                                                |
+| Phan      | phan_wrapper.sh /codebase      | generates a file list and passes it to phan [bit.ly/1NYJJR2][http://bit.ly/1NYJJR2]  |
 
 ## Installation
 
-1. Clone this repository:
+Clone this repository:
 
 ```
 git clone https://github.com/fabioarciniegas/docker-security-tools.git
 ```
 
-2. Build the container:
+Build the container:
 
 ```bash
 docker build -t php_analysis docker-security-tools/php
 ```
 
-3. Run the container:
+Run the container:
 
 ```bash
-docker run -it -p 3002:80 -v [your code dir]:/codebase --name local_php_analysis php_analysis 
+docker run -it -p 3002:80 -v $(pwd):/codebase --name local_php_analysis php_analysis 
 ```
 
 There are two important features enabled when running the container:
  - Port mapping (option `-p 3002:80`): allows you to access the web interface of the some tools
  - Volume sharing (option `-v /codebase [your code dir]`): allows you to share the directory containing your code with the container
 
-example:
+an example with a specific code path:
 
 ```bash
 docker run -it -p 3002:80 -v /home/fabio/my_php_project:/codebase --name local_php_analysis php_analysis
