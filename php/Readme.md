@@ -4,45 +4,51 @@ PHP tools, particularly those claiming security benefits are constantly changing
 
 # Tools 
 
-| tool      | how to run                     | notes                                                                          |
+| tool      | quick run                     | notes/more information                                                                          |
 |-----------|--------------------------------|--------------------------------------------------------------------------------|
-| RIPS 0.55 | [[http://localhost:3001/rips]] |                                                                                |
-| Phan      | phan_wrapper.sh /codebase      | generates a file list and passes it to phan [[http://bit.ly/1NYJJR2]]  |
+| RIPS 0.55 | [http://localhost:3002/rips] |                                                                                |
+| Phan      | phan_wrapper.sh /codebase      | generates a file list and passes it to phan [http://bit.ly/1NYJJR2]  |
 
-## Building the container
+## Installation
 
-To build this container run:
+1. Clone this repository:
+
+```
+git clone https://github.com/fabioarciniegas/docker-security-tools.git
+```
+
+2. Build the container:
 
 ```bash
 docker build -t php_analysis docker-security-tools/php
 ```
 
-## Running the container
-
-There are two important features to enable when running the container:
- - Port mapping (option `-p 3002:80`): allows you to access the web interface of the tools
- - Volume sharing (option `-v /codebase [your code dir]`): allows you to share the directory containing your code with the container
+3. Run the container:
 
 ```bash
-docker run -it -p 3002:80 php_analysis -v [your code dir]:/codebase --name local_php_analysis
+docker run -it -p 3002:80 -v [your code dir]:/codebase --name local_php_analysis php_analysis 
 ```
+
+There are two important features enabled when running the container:
+ - Port mapping (option `-p 3002:80`): allows you to access the web interface of the some tools
+ - Volume sharing (option `-v /codebase [your code dir]`): allows you to share the directory containing your code with the container
 
 example:
 
 ```bash
-docker run -it -p 3002:80 php_analysis -v /home/fabio/my_php_project:/codebase --name local_php_analysis
+docker run -it -p 3002:80 -v /home/fabio/my_php_project:/codebase --name local_php_analysis php_analysis
 ```
 
-Once built you will be able to access it via [[http://localhost:3002]]
+## Running the tools 
 
-## Running tools inside this container
+See the table at the top of this page for tools and their command options.
 
-First start bash in the container:
+To get a command line into the container:
 
 ```bash
 docker exec -it local_php_analysis
 ```
-Now see the table at the top of this page for tools and their command options.
+
 
 # Feedback
 
