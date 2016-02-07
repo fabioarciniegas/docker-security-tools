@@ -4,10 +4,10 @@ PHP tools, particularly those claiming security benefits are constantly changing
 
 # Tools 
 
-| tool      | how to run                | notes                                                                          |
-|-----------|---------------------------|--------------------------------------------------------------------------------|
-| RIPS 0.55 | [[http://localhost:3001]] |                                                                                |
-| Phan      | phan_wrapper.sh /codebase | wrappers generates a file list and passes it to phan [[http://bit.ly/1NYJJR2]] |
+| tool      | how to run                     | notes                                                                          |
+|-----------|--------------------------------|--------------------------------------------------------------------------------|
+| RIPS 0.55 | [[http://localhost:3001/rips]] |                                                                                |
+| Phan      | phan_wrapper.sh /codebase      | generates a file list and passes it to phan [[http://bit.ly/1NYJJR2]]  |
 
 ## Building the container
 
@@ -24,7 +24,13 @@ There are two important features to enable when running the container:
  - Volume sharing (option `-v /codebase [your code dir]`): allows you to share the directory containing your code with the container
 
 ```bash
-docker run -it -p 3002:80 php_analysis --name local_php_analysis
+docker run -it -p 3002:80 php_analysis -v [your code dir]:/codebase --name local_php_analysis
+```
+
+example:
+
+```bash
+docker run -it -p 3002:80 php_analysis -v /home/fabio/my_php_project:/codebase --name local_php_analysis
 ```
 
 Once built you will be able to access it via [[http://localhost:3002]]
