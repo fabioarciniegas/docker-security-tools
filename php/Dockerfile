@@ -7,8 +7,8 @@ RUN wget http://sourceforge.net/projects/rips-scanner/files/rips-0.55.zip/downlo
 
 RUN git clone https://github.com/fabioarciniegas/docker-security-tools
 
-RUN unzip download &&
-    mv rips-0.55 /var/www/ &&
+RUN unzip download &&\
+    mv rips-0.55 /var/www/ &&\
     chmod -R 755 /var/www/rips
 
 RUN jq --slurp --raw-input '{"text": "\(.)", "mode": "markdown"}' < docker-security-tools/php/Readme.md | curl --data @- https://api.github.com/markdown > /var/www/html/index.html
