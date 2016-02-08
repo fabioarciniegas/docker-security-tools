@@ -18,7 +18,7 @@ RUN chmod 755 /var/www/html/index.html
 #RUN apt-get install -y language-pack-en-base &&\
 #LC_ALL=en_US.UTF-8 add-apt-repository -y ppa:ondrej/php
 
-RUN wget https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar &&
+RUN wget https://squizlabs.github.io/PHP_CodeSniffer/phpcs.phar &&\
     wget https://squizlabs.github.io/PHP_CodeSniffer/phpcbf.phar
 
 RUN echo "service apache2 start" >> /etc/bash.bashrc
