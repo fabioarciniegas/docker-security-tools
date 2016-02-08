@@ -7,7 +7,7 @@ PHP tools, particularly those claiming security benefits are constantly changing
 | tool      | quick run                     | notes/more information                                                                          |
 |-----------|--------------------------------|--------------------------------------------------------------------------------|
 | RIPS 0.55 | [localhost:3002/rips](http://localhost:3002/rips) |                                                                                |
-| Phan      | phan_wrapper.sh /codebase      | generates a file list and passes it to phan [bit.ly/1NYJJR2](http://bit.ly/1NYJJR2)  |
+| PHP Code Sniffer      | php phpcbf.phar [file]     | More quality practices than specific security tests [More info](http://bit.ly/20PV0N0)  |
 
 ## Installation
 
