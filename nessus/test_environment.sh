@@ -30,3 +30,4 @@ else
 fi
 dpkg -i $(find /nessus-installer/ -maxdepth 1 -name "*.deb" -print -quit)
 
+bash
