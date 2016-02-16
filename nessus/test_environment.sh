@@ -3,7 +3,7 @@
 #if nessus is already installed and running just exit
 
 service status nessus
-if [ $? == 0  ]
+if [ $? -eq 0  ]
 then
     exit 0
 fi
