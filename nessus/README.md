@@ -6,7 +6,7 @@ Nessus terms of service require that you download the installer and registration
 
 http://www.tenable.com/products/nessus/select-your-operating-system#
 
-Select the latest installer for LINUX UBUNTU (e.g. Nessus-6.5.4-ubuntu1110_amd64.deb) and put it in a directory e.g. /tmp/installer
+Download the installer for LINUX UBUNTU (e.g. Nessus-6.5.4-ubuntu1110_amd64.deb) and put it in a directory you can share with the container e.g. /tmp/installer
 
 then start this image with the following command:
 

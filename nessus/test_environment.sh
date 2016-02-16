@@ -1,10 +1,20 @@
 #!/bin/sh
+# Test that there is a Nessus installer shared with this container, 
+# install if it exists, fail if it doesn't or there is more than one.
 
 cat README.md
 echo "\nLooking for nessus package in shared volume /nessus-installer:"
-if ls /nessus-installer/Nessus*deb 1 > /dev/null 2>&1; then
-    echo "\033[0;34mNessus Installer found\033[0m"
+installer=$(find /nessus-installer/ -maxdepth 1 -name "*.deb" -print | wc -l)
+if [ $installer != "0" ] 
+then
+    echo "\033[0;32mInstaller file found\033[0;m";
+    if [ $(find /nessus-installer/ -maxdepth 1 -name "*.deb" -print | wc -l) != "1" ]
+    then
+	echo "\033[1;31mHowever, more than one deb file was found. Please leave only one installer in the /nessus-installer directory\033[0m"
+	exit 0
+    fi
 else 
-    echo "\033[1;31mNessus Installer not found\033[0m"
+    echo "\033[1;31mNessus Installer not found\033[0;m"
+    exit 0
 fi
-exit 0
+dpkg -i $(find /nessus-installer/ -maxdepth 1 -name "*.deb" -print -quit)
