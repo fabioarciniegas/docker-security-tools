@@ -1,8 +1,16 @@
 #!/bin/sh
+
+#if nessus is already installed and running just report that and exit
+
+if $(service status nessus)
 # Test that there is a Nessus installer shared with this container, 
 # install if it exists, fail if it doesn't or there is more than one.
 
-cat README.md
+SCRIPT=$(readlink -f "$0")
+# Absolute path this script is in, thus /home/user/bin
+SCRIPTPATH=$(dirname "$SCRIPT")
+cat  $SCRIPTPATH/README.md
+
 echo "\nLooking for nessus package in shared volume /nessus-installer:"
 installer=$(find /nessus-installer/ -maxdepth 1 -name "*.deb" -print | wc -l)
 if [ $installer != "0" ] 
