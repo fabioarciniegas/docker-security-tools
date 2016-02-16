@@ -10,4 +10,4 @@ RUN docker-security-tools/nessus/test_environment.sh
 
 EXPOSE 8834
 
-CMD ["bash.sh"]
+CMD ["docker-security-tools/nessus/test_environment.sh"]
