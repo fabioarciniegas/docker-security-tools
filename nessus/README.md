@@ -16,5 +16,5 @@ Download the installer for LINUX UBUNTU (e.g. Nessus-6.5.4-ubuntu1110_amd64.deb)
 
 then start this image with the following command:
 
-docker run -d -p 8834:8834 -v /tmp/installer:/nessus-installer nessus
+docker run -it -p 8834:8834 -v /tmp/installer:/nessus-installer nessus
 
