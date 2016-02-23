@@ -9,6 +9,7 @@ RUN \
 # Define working directory.
 WORKDIR /data
 
+RUN apt-get install -y nodejs
 RUN npm install -g eslint
 
 # CMD eslint '/data/*.js'
