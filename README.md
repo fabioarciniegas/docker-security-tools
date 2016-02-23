@@ -20,5 +20,6 @@ If you have a tool you think we all should use please feel free to fork and subm
 
 - Keep it automatic. If it requires more than one step of pre-configuration it probably doesn't belong here. This is a place for quick tools we can all leverage with minumum effort.
 
+- Keep it diagnostic. The idea is to reuse sanity-check tools in development pipelines, not to replace Kali as a collection of hacking tools. 
 
 
