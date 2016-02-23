@@ -17,7 +17,8 @@ docker run -it code-analysis/php/Dockerfile
 If you have a tool you think we all should use please feel free to fork and submit. But please keep in mind:
 
  - Keep  it light. The goal of this project is not to port all of Kali or every static analysis tool to docker containers. It is a curation effort intended to give 80% of usable results with minimum (less than 20% :) ) effort.
-  - Keep it automatic. If it requires more than one step of pre-configuration it probably doesn't belong here. This is a place for quick tools we can all leverage with minumum effort.
+
+- Keep it automatic. If it requires more than one step of pre-configuration it probably doesn't belong here. This is a place for quick tools we can all leverage with minumum effort.
 
 
 
