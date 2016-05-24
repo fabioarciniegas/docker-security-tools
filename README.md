@@ -5,11 +5,10 @@ These docker images provide a quick way to install pre-configured recommended to
 # Usage
 
 Simply clone this repository and run docker on the directory of the tool you are interested in.
-See Readme.md on each directory for details.
-
+See Readme.md on each directory for details.  In general it will look like this:
 
 ```
-docker run -it code-analysis/php/Dockerfile
+docker build code-analysis/php
 ```
 
 # Contribute
